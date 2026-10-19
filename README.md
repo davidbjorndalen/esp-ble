@@ -23,21 +23,22 @@ advertising channel 38 (2426 MHz):
 ```
 #44 [ch38] SCAN_REQ         CRC OK     len=12  offset=+35 kHz match=0.88 t=42.4 us
 #44 [ch38] SCAN_RSP         CRC OK     len=26  offset=+85 kHz match=0.89 t=369.5 us
-    address: 4E:13:DE:97:CE:29 (random)
+    address: 4A:11:22:33:44:01 (random)
     Name: Echo Studio-31E
     TX power: 6 dBm
 #187 [ch38] ADV_NONCONN_IND  CRC OK     len=14  offset=+54 kHz match=0.80 t=486.0 us
-    address: E5:9D:78:BC:69:7A (random)
+    address: E1:AA:BB:CC:DD:03 (random)
     Manufacturer data: Apple: 12020002 (Find My)
 #389 [ch38] ADV_IND          CRC OK     len=15  offset=+53 kHz match=0.88 t=207.2 us
-    address: FA:E6:6B:CD:42:C9 (random)
+    address: F3:9A:BC:DE:F0:05 (random)
     Flags: 0x06
     Manufacturer data: Garmin: 1013
 ```
 
 Devices seen included an Amazon Echo Studio, a Philips Hue bulb, a Google Nest device, an
 Apple device sending Find My beacons, and a Garmin device. Every packet shown passed its
-24-bit CRC.
+24-bit CRC. Device addresses have been replaced with made-up ones of the same
+address type.
 
 **Timing check.** Snapshot #44 caught a complete exchange: a nearby device sent a scan request
 to the Echo, and the Echo answered. The request is 12 bytes, so it lasts 80 + 12 × 8 = 176 µs
@@ -101,9 +102,9 @@ prints again on exit:
 
 ```
 address            pkts  offset kHz  spread     ppm  SNR dB  device
-FA:E6:6B:CD:42:C9     2       +61.4     0.1    -0.8      11  Garmin
-5E:73:64:58:59:56     1       +92.1     0.0   +11.8      22  Amazon
-E6:D3:DD:DA:DC:6E     1       +65.5     0.0    +0.8      12  Signify (Philips Hue)
+F3:9A:BC:DE:F0:05     2       +61.4     0.1    -0.8      11  Garmin
+5B:55:66:77:88:02     1       +92.1     0.0   +11.8      22  Amazon
+E2:12:34:56:78:04     1       +65.5     0.0    +0.8      12  Signify (Philips Hue)
 ```
 
 - **offset kHz**: carrier offset, fitted over the whole packet. This is the device's
