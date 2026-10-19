@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+hits/
+caps/
+*.ci8
+*.cf32
+*.cfile
